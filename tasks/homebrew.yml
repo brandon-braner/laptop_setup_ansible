@@ -1,6 +1,5 @@
 ---
 - name: Install Homebrew and Homebrew packages
-  hosts: localhost
   connection: local
   vars_files:
     - ../vars.yml
@@ -27,6 +26,10 @@
       homebrew_cask:
         state: present
         name: google-cloud-sdk
+    - name: Install Terraform
+      homebrew:
+        state: present
+        name: terraform
     - name: Install Visual Studio Code
       homebrew_cask:
         state: present
