@@ -2,6 +2,14 @@
 
 We will be using Ansible to setup a laptop. This should install everything we need to get a laptop up and running for a new developer.
 
+
+## Create virtual environment
+* Open terminal and cd to the downloaded folder
+* Run `python3 -m venv venv` install command line dev tools when prompted. This may take a couple minutes as it is installing xcode. You will probably have to run `python3 -m venv venv` again if the folder doesn't exist.
+* Run `source venv/bin/activate` to activate the virtual environment
+* Upgrade pip ``
+* Run `pip install -r requirements.txt` to install all the requirements
+* 
 ## Update variables
 * Update email_address with your torqata email address
 ## Run the playbooks

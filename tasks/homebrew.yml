@@ -1,10 +1,11 @@
 ---
 - name: Install Homebrew and Homebrew packages
   hosts: localhost
+  become: yes
+  connection: local
   tasks:
     - name: Install Homebrew # Install Homebrew
-      homebrew:
-        state: present
+      shell: /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
     - name: Install iterm2
       homebrew_cask:
         state: present
