@@ -1,6 +1,8 @@
 ---
 - name: Install Homebrew and Homebrew packages
   connection: local
+  become: yes
+  become_user: {{username}}
   vars_files:
     - ../vars.yml
   tasks:
