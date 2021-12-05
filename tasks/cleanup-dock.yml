@@ -33,6 +33,3 @@
     - name: Remove Dock items
       shell: dockutil --remove '{{ item }}'
       with_items: '{{ x }}'
-    - set_fact: y='{{ dockitems_to_persist|map(attribute="name")|list }}'
-    - set_fact:
-        x: '{{ y | difference(dockitems.stdout_lines) }}'

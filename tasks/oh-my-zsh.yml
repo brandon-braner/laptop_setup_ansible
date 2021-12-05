@@ -9,4 +9,4 @@
     - name: Remove old zshrc
       command: mv ~/.zshrc ~/.zshrc.default
     - name: Copy preconifgured zshrc
-      copy: src=../files/zshrc dest=/home/vagrant/.zshrc
+      copy: src=../files/zshrc dest=~/.zshrc

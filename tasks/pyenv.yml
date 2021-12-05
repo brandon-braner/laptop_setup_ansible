@@ -1,19 +1,18 @@
 ---
-name: Install pyenv
-description: Install pyenv
-hosts: localhost
-tasks:
-  - name: Install pyenv
-    command: curl https://pyenv.run | zsh
-  - name: Write pyenv to zprofile
-    copy:
-      dest: ~/.zprofile
-      content:
-        export PYENV_ROOT="$HOME/.pyenv"
-        export PATH="$PYENV_ROOT/bin:$PATH"
-        eval "$(pyenv init --path)"
-  - name: Write pyenv to zshrc
-    copy:
-      dest: ~/.zshrc
-      content:
-        eval "$(pyenv init -)"
+- name: Install pyenv
+  hosts: localhost
+  tasks:
+    - name: Install pyenv
+      command: curl https://pyenv.run | zsh
+    - name: Write pyenv to zprofile
+      copy:
+        dest: ~/.zprofile
+        content:
+          export PYENV_ROOT="$HOME/.pyenv"
+          export PATH="$PYENV_ROOT/bin:$PATH"
+          eval "$(pyenv init --path)"
+    - name: Write pyenv to zshrc
+      copy:
+        dest: ~/.zshrc
+        content:
+          eval "$(pyenv init -)"

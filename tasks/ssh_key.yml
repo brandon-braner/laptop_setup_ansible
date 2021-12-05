@@ -4,6 +4,10 @@
   vars_files:
     - ../vars.yml
   tasks:
+    - name: Create .ssh directory
+      file: 
+        path: ~/.ssh
+        state: directory
     - name: Generate ssh cert for user
       openssh_keypair:
         path: ~/.ssh/id_rsa
@@ -17,7 +21,7 @@
         state: touch
     - name: Write to config file
       copy:
-        dest: ~/.ssh/config
+        dest: /User/{{username}}/.ssh/config
         content:
           Host *
             AddKeysToAgent yes

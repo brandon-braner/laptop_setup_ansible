@@ -30,9 +30,6 @@
       homebrew:
         state: present
         name: node
-        args:
-          args:
-            - --with-npm
     - name: Install Postman
       homebrew_cask:
         state: present
