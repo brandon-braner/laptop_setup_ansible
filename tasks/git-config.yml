@@ -1,0 +1,18 @@
+---
+- name: Setup git config
+  hosts: localhost
+  vars_files:
+    - ../vars.yml
+  tasks:
+    - name: Setup git config username
+      git_config:
+        name: user.name
+        value: "{{ git_username }}"
+        scope: global
+        state: present
+    - name: Setup git config email
+      git_config:
+        name: user.email
+        value: "{{ email_address }}"
+        scope: global
+        state: present

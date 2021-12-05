@@ -1,0 +1,48 @@
+---
+- name: Install Homebrew and Homebrew packages
+  hosts: localhost
+  tasks:
+    - name: Install Homebrew # Install Homebrew
+      homebrew:
+        state: present
+    - name: Install iterm2
+      homebrew_cask:
+        state: present
+        name: iterm2
+    - name: Install Docker Desktop
+      homebrew_cask:
+        state: present
+        name: docker
+    - name: Install kubectl
+      homebrew:
+        state: present
+        name: kubectl
+    - name: Install gcloud
+      homebrew_cask:
+        state: present
+        name: google-cloud-sdk
+    - name: Install Visual Studio Code
+      homebrew_cask:
+        state: present
+        name: visual-studio-code
+    - name: Install NodeJS and NPM
+      homebrew:
+        state: present
+        name: node
+        args:
+          args:
+            - --with-npm
+    - name: Install Postman
+      homebrew_cask:
+        state: present
+        name: postman
+    - name: Install DBeaver Community Edition
+      homebrew_cask:
+        state: present
+        name: dbeaver-community
+    - name: Install pyenv
+      homebrew:
+        state: present
+        name: pyenv
+    
+    
