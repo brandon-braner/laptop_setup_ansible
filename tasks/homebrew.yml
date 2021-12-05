@@ -40,9 +40,8 @@
       homebrew_cask:
         state: present
         name: dbeaver-community
-    - name: Install pyenv
-      homebrew:
+    - name: Install DockUtil
+      homebrew_cask:
         state: present
-        name: pyenv
-    
+        name: dockutil
     

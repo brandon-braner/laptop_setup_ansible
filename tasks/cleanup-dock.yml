@@ -1,0 +1,38 @@
+---
+- name: Cleanup Dock
+  hosts: localhost
+  vars:
+    dockitems_to_remove:
+    - Launchpad
+    - Messages
+    - Mail
+    - Maps
+    - Photos
+    - FaceTime
+    - Calendar
+    - Contacts
+    - Reminders
+    - Notes
+    - TV
+    - Music
+    - Podcasts
+    - News
+    - App Store
+    - Settings
+
+  tasks:
+    - name: Current Dock names
+      shell: >
+        dockutil --list |
+        python -c 'import sys; [sys.stdout.write(line.split("\t")[0] + "\n")
+        for line in sys.stdin]'
+      register: dockitems
+      changed_when: false
+    - set_fact:
+        x: '{{ dockitems_to_remove | intersect(dockitems.stdout_lines) }}'
+    - name: Remove Dock items
+      shell: dockutil --remove '{{ item }}'
+      with_items: '{{ x }}'
+    - set_fact: y='{{ dockitems_to_persist|map(attribute="name")|list }}'
+    - set_fact:
+        x: '{{ y | difference(dockitems.stdout_lines) }}'
