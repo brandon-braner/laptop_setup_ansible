@@ -1,0 +1,9 @@
+---
+- name: Setup VS Code
+  hosts: localhost
+  tasks:
+    - name: Setup code shell command
+      shell: | 
+        cat << EOF >> ~/.zshrc 
+        # Add Visual Studio Code (code) export 
+        PATH="\$PATH:/Applications/Visual Studio Code.app/Contents/Resources/app/bin" EOF

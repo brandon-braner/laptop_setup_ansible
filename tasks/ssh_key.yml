@@ -5,23 +5,21 @@
     - ../vars.yml
   tasks:
     - name: Create .ssh directory
-      file: 
-        path: ~/.ssh
-        state: directory
+      shell: mkdir -p /Users/{{username}}/.ssh
     - name: Generate ssh cert for user
       openssh_keypair:
         path: ~/.ssh/id_rsa
         type: ed25519
         comment: '{{ email_address }}'
     - name: Start ssh agent
-      command: eval "$(ssh-agent -s)"
+      shell: eval "$(ssh-agent -s)"
     - name: Ensure config file exists
       file:
         path: ~/.ssh/config
         state: touch
     - name: Write to config file
       copy:
-        dest: /User/{{username}}/.ssh/config
+        dest: /Users/{{username}}/.ssh/config
         content:
           Host *
             AddKeysToAgent yes
