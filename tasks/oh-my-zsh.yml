@@ -10,3 +10,5 @@
       command: mv ~/.zshrc ~/.zshrc.default
     - name: Copy preconifgured zshrc
       copy: src=../files/zshrc dest=~/.zshrc
+    - name: Change shell to zsh
+      shell: chsh -s /bin/zsh

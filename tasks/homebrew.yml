@@ -2,6 +2,8 @@
 - name: Install Homebrew and Homebrew packages
   hosts: localhost
   connection: local
+  vars_files:
+    - ../vars.yml
   tasks:
     - name: Install Homebrew # Install Homebrew
       shell: /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
@@ -45,4 +47,16 @@
       homebrew:
         state: present
         name: dockutil
+    - name: Install zsh-auto-highlight
+      homebrew:
+        state: present
+        name: zsh-auto-highlighting
+    - name: Install zsh-autosuggestions
+      homebrew:
+        state: present
+        name: zsh-autosuggestions
+    - name: Install zsh-completions
+      homebrew:
+        state: present
+        name: zsh-completions
     

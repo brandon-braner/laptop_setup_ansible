@@ -1,9 +1,43 @@
 ---
 - name: Setup VS Code
   hosts: localhost
+  vars_files:
+    - ../vars.yml
   tasks:
     - name: Setup code shell command
       shell: | 
-        cat << EOF >> ~/.zshrc 
+        cat << EOF  ~/.zshrc 
         # Add Visual Studio Code (code) export 
-        PATH="\$PATH:/Applications/Visual Studio Code.app/Contents/Resources/app/bin" EOF
+        PATH="\$PATH:/Applications/Visual Studio Code.app/Contents/Resources/app/bin" 
+        EOF
+    - name: Resource shell
+      shell: | 
+        source /Users/{{username}}/.zshrc
+    - name: Install Python Extension
+      shell: | 
+        code --install-extension ms-python.python
+    - name: Install Remote Containers
+      shell: | 
+        code --install-extension ms-vscode.remote-containers
+    - name: Install Docker Extension
+      shell: | 
+        code --install-extension ms-azuretools.vscode-docker
+    - name: Install Kubectl Extension
+      shell: | 
+        code --install-extension ms-vscode.azure-kubernetes
+    - name: Install Git Lens
+      shell: | 
+        code --install-extension eamodio.gitlens
+    - name: Install ES Lint
+      shell: | 
+        code --install-extension dbaeumer.vscode-eslint
+    - name: Install Terraform
+      shell: | 
+        code --install-extension ms-vscode.terraform
+    - name: Install Sourcery
+      shell: | 
+        code --install-extension donjayamanne.sourcery # https://sourcery.ai/
+    - name: Install Angular Extension Pack
+      shell: | 
+        code --install-extension loiane.angular-extension-pack
+

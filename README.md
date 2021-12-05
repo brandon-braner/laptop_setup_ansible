@@ -12,14 +12,16 @@ We will be using Ansible to setup a laptop. This should install everything we ne
 * 
 ## Update variables
 * Update variables in the vars.yml file
+* Update remote_user in the ansible.cfg file as your local username
 ## Run the playbooks
 
 * Source the Python venv `source venv/bin/activate` this will allow you to run the ansible commands.
 * Run the following commands to run the playbooks
-  * might have to run like `sudo ansible-playbook ./tasks/homebrew.yml -u username`
+  * might have to run like `sudo ansible-playbook ./tasks/homebrew.yml -u username` the first time to get past an error then run it again without sudo???
   * ansible-playbook tasks/homebrew.yml
   * ansible-playbook tasks/oh-my-zsh.yml
   * ansible-playbook tasks/ssh_key.yml
   * ansible-playbook tasks/git-config.yml
   * ansible-playbook tasks/pyenv.yml
+  * ansible-playbook tasks/setup-vscode.yml
   * ansible-playbook tasks/cleanup-dock.yml
