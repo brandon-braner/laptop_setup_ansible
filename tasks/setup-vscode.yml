@@ -1,43 +1,28 @@
 ---
 - name: Setup VS Code
   hosts: localhost
+  vars:
+    extensions:
+      - ms-python.python
+      - ms-vscode-remote.remote-containers
+      - ms-azuretools.vscode-docker
+      - ms-kubernetes-tools.vscode-kubernetes-tools
+      - eamodio.gitlens
+      - dbaeumer.vscode-eslint
+      - HashiCorp.terraform
+      - sourcery.sourcery
+      - loiane.angular-extension-pack
   vars_files:
     - ../vars.yml
   tasks:
-    - name: Setup code shell command
+    - name: Setup code shell command # https://code.visualstudio.com/docs/setup/mac#_launching-from-the-command-line
+      lineinfile:
+        path: /Users/{{username}}/.zshrc 
+        line: export PATH="$PATH:/Applications/Visual Studio Code.app/Contents/Resources/app/bin" 
+    - name: Export VS Code directly to PATH # Do this so its available immediately
       shell: | 
-        cat << EOF  ~/.zshrc 
-        # Add Visual Studio Code (code) export 
-        PATH="\$PATH:/Applications/Visual Studio Code.app/Contents/Resources/app/bin" 
-        EOF
-    - name: Resource shell
+        export PATH="$PATH:/Applications/Visual Studio Code.app/Contents/Resources/app/bin" 
+    - name: Install VS Code extensions
       shell: | 
-        source /Users/{{username}}/.zshrc
-    - name: Install Python Extension
-      shell: | 
-        code --install-extension ms-python.python
-    - name: Install Remote Containers
-      shell: | 
-        code --install-extension ms-vscode.remote-containers
-    - name: Install Docker Extension
-      shell: | 
-        code --install-extension ms-azuretools.vscode-docker
-    - name: Install Kubectl Extension
-      shell: | 
-        code --install-extension ms-vscode.azure-kubernetes
-    - name: Install Git Lens
-      shell: | 
-        code --install-extension eamodio.gitlens
-    - name: Install ES Lint
-      shell: | 
-        code --install-extension dbaeumer.vscode-eslint
-    - name: Install Terraform
-      shell: | 
-        code --install-extension ms-vscode.terraform
-    - name: Install Sourcery
-      shell: | 
-        code --install-extension donjayamanne.sourcery # https://sourcery.ai/
-    - name: Install Angular Extension Pack
-      shell: | 
-        code --install-extension loiane.angular-extension-pack
-
+        code --install-extension "{{ item }}"
+      loop: "{{extensions}}"
