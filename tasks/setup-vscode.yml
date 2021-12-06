@@ -15,11 +15,11 @@
   vars_files:
     - ../vars.yml
   tasks:
-    - name: Setup code shell command
+    - name: Setup code shell command # https://code.visualstudio.com/docs/setup/mac#_launching-from-the-command-line
       lineinfile:
         path: /Users/{{username}}/.zshrc 
         line: export PATH="$PATH:/Applications/Visual Studio Code.app/Contents/Resources/app/bin" 
-    - name: Resource shell
+    - name: Export VS Code directly to PATH # Do this so its available immediately
       shell: | 
         export PATH="$PATH:/Applications/Visual Studio Code.app/Contents/Resources/app/bin" 
     - name: Install VS Code extensions

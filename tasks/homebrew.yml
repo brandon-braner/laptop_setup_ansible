@@ -22,7 +22,7 @@
     - ../vars.yml
   tasks:
     - name: Install Homebrew # Install Homebrew
-      shell: /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+      script: ../scripts/install_homebrew.sh
     - name: Add homebrew to Path Step 1
       shell: echo 'eval "$(/opt/homebrew/bin/brew shellenv)"' >> /Users/{{username}}/.zprofile
     - name: Add homebrew to Path Step 2
