@@ -9,6 +9,12 @@
     - name: Remove old zshrc
       command: mv ~/.zshrc ~/.zshrc.default
     - name: Copy preconifgured zshrc
-      copy: src=../files/zshrc dest=~/.zshrc
+      copy: 
+        src=../files/zshrc 
+        dest=~/.zshrc
+    - name: Ensure zprofile exists
+      file: 
+        path=~/.zprofile 
+        state=touch
     - name: Change shell to zsh
       shell: chsh -s /bin/zsh
