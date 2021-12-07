@@ -14,6 +14,7 @@ We will be using Ansible to setup a Mac laptop / desktop. This should install ev
 * terraform
 * node
 * pyenv
+* poetry
 * dockutil
 * zsh-syntax-highlighting
 * zsh-autosuggestions
