@@ -1,7 +1,28 @@
 # Use Ansible to setup laptop
 
-We will be using Ansible to setup a laptop. This should install everything we need to get a laptop up and running for a new developer.
+We will be using Ansible to setup a Mac laptop / desktop. This should install everything we need to get a laptop up and running for a new developer.
 
+** Software that will be installed **
+* iterm2
+* oh-my-zsh
+* docker de 
+* google clou 
+* visual studio code
+* postman
+* dbeaver
+* kubectl
+* terraform
+* node
+* pyenv
+* dockutil
+* zsh-syntax-highlighting
+* zsh-autosuggestions
+* zsh-completions
+
+** Other Items**
+* Set your global git name and email
+* Create a new ssh key as id_rsa and id_rsa.pub and add it to your keychain. This should be added to your github account manually.
+* Removes all the cruft from your dock for you.
 
 ## Create virtual environment
 * Open terminal and cd to the downloaded folder
