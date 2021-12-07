@@ -1,16 +1,14 @@
 ---
 - name: Install pyenv
   hosts: localhost
-  pre_tasks:
-    - name: Check if pyenv is installed
-      shell: pyenv --version
-      register: pyenv_check
+  # pre_tasks:
+  #   - name: Check if pyenv is installed
+  #     shell: pyenv --version
+  #     register: pyenv_check
   tasks:
     - name: Install pyenv
       shell: curl https://pyenv.run | bash
-      debug:
-        msg: Pyenv check"{{ pyenv_check.stdout }}"
-      when: pyenv_check.stdout is search("command not found")
+      # when: pyenv_check.stdout is search("command not found")
     - name: Write pyenv to zprofile
       blockinfile:
         dest: ~/.zprofile
@@ -18,9 +16,9 @@
           export PYENV_ROOT="$HOME/.pyenv"
           export PATH="$PYENV_ROOT/bin:$PATH"
           eval "$(pyenv init --path)"
-      when: pyenv_check.stdout is search("command not found")
+      # when: pyenv_check.stdout is search("command not found")
     - name: Write pyenv to zshrc
       lineinfile:
         dest: ~/.zshrc
         line: eval "$(pyenv init -)"
-      when: pyenv_check.stdout is search("command not found")
+      # when: pyenv_check.stdout is search("command not found")

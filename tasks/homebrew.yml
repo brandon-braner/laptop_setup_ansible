@@ -39,14 +39,14 @@
     #       1: ""
     #   when:
     #     - not homebrew_check.stat.exists
-    - name: Add homebrew to Path Step 1
-      shell: echo 'eval "$(/opt/homebrew/bin/brew shellenv)"' >> /Users/{{username}}/.zprofile
-      when:
-        - not homebrew_check.stat.exists
-    - name: Add homebrew to Path Step 2
-      shell: eval "$(/opt/homebrew/bin/brew shellenv)"
-      when:
-        - not homebrew_check.stat.exists
+    # - name: Add homebrew to Path Step 1
+    #   shell: echo 'eval "$(/opt/homebrew/bin/brew shellenv)"' >> /Users/{{username}}/.zprofile
+    #   when:
+    #     - not homebrew_check.stat.exists
+    # - name: Add homebrew to Path Step 2
+    #   shell: eval "$(/opt/homebrew/bin/brew shellenv)"
+    #   when:
+    #     - not homebrew_check.stat.exists
     - name: Install Homebrew casks
       homebrew_cask:
         state: present
