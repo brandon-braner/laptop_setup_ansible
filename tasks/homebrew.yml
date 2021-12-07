@@ -15,6 +15,7 @@
       - terraform
       - node
       - pyenv
+      - poetry
       - dockutil
       - zsh-syntax-highlighting
       - zsh-autosuggestions
