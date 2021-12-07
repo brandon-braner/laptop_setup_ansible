@@ -13,6 +13,7 @@
       - slack
     homebrew_packages:
       - kubectl
+      - kubectx
       - terraform
       - node
       - dockutil
