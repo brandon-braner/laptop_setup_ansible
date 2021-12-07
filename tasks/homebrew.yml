@@ -15,6 +15,7 @@
       - kubectl
       - terraform
       - node
+      - pre-commmit
       - pyenv
       - poetry
       - dockutil
