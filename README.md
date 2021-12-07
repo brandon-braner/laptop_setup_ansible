@@ -61,3 +61,9 @@ We will be using Ansible to setup a Mac laptop / desktop. This should install ev
   * ansible-playbook tasks/pyenv.yml
   * ansible-playbook tasks/setup-vscode.yml
   * ansible-playbook tasks/cleanup-dock.yml
+
+
+## Add ssh key to Github
+* run pbcopy < ~/.ssh/id_rsa.pub
+* Log into Github and go to your profile -> SSH & GPG Keys
+* Create a new ssh key and paste your public key copied above with pbcopy
