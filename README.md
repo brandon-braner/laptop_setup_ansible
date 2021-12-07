@@ -6,7 +6,6 @@ We will be using Ansible to setup a Mac laptop / desktop. This should install ev
 * dbeaver
 * docker desktop
 * dockutil
-* dockutil
 * google cloud
 * iterm2
 * kubectl
@@ -18,6 +17,7 @@ We will be using Ansible to setup a Mac laptop / desktop. This should install ev
 * pyenv
 * terraform
 * tilt
+* slack
 * visual studio code
 * zsh-autosuggestions
 * zsh-completions
