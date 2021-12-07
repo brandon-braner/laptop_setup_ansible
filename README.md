@@ -18,12 +18,10 @@ We will be using Ansible to setup a laptop. This should install everything we ne
 
 * Source the Python venv `source venv/bin/activate` this will allow you to run the ansible commands.
 * Run the following commands to run the playbooks
-* {{username}} below is the result of whoami
-  * might have to run the homebrew playbook like `ansible-playbook ./tasks/homebrew.yml -u {{username}} -kK` the first time to get past an error then run it again without -kK
-  * ansible-playbook tasks/homebrew.yml -u {{username}}
-  * ansible-playbook tasks/oh-my-zsh.yml -u {{username}}
-  * ansible-playbook tasks/ssh_key.yml -u {{username}}
-  * ansible-playbook tasks/git-config.yml -u {{username}}
-  * ansible-playbook tasks/pyenv.yml -u {{username}}
-  * ansible-playbook tasks/setup-vscode.yml -u {{username}}
-  * ansible-playbook tasks/cleanup-dock.yml -u {{username}}
+  * ansible-playbook tasks/homebrew.yml
+  * ansible-playbook tasks/oh-my-zsh.yml
+  * ansible-playbook tasks/ssh_key.yml
+  * ansible-playbook tasks/git-config.yml
+  * ansible-playbook tasks/pyenv.yml
+  * ansible-playbook tasks/setup-vscode.yml
+  * ansible-playbook tasks/cleanup-dock.yml
