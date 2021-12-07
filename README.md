@@ -9,7 +9,7 @@ We will be using Ansible to setup a laptop. This should install everything we ne
 * Run `source venv/bin/activate` to activate the virtual environment
 * Upgrade pip `python -m pip install --upgrade pip`
 * Run `pip install -r requirements.txt` to install all the requirements
-* 
+* Install homebrew `/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"` (Figure out how to automate this)[https://github.com/geerlingguy/ansible-role-homebrew]
 ## Update variables
 * Update variables in the vars.yml file
 * Update remote_user in the ansible.cfg file as your local username
