@@ -10,12 +10,13 @@
       - visual-studio-code
       - postman
       - dbeaver-community
-      - tilt
+      - slack
     homebrew_packages:
       - kubectl
       - terraform
       - node
-      - pre-commmit
+      - tilt
+      - pre-commit
       - pyenv
       - poetry
       - dockutil
