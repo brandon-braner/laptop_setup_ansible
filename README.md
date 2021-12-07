@@ -23,6 +23,17 @@ We will be using Ansible to setup a Mac laptop / desktop. This should install ev
 * zsh-completions
 * zsh-syntax-highlighting
 
+** Installs the following VS Code extensions **
+* [Python - ms-python.python](https://marketplace.visualstudio.com/items?itemName=ms-python.python)
+* [Remote Containers - ms-vscode-remote.remote-containers](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-containers)
+- [Docker - ms-azuretools.vscode-docker](https://marketplace.visualstudio.com/items?itemName=ms-azuretools.vscode-docker)
+- [Kubernetes - ms-kubernetes-tools.vscode-kubernetes-tools](https://marketplace.visualstudio.com/items?itemName=ms-kubernetes-tools.vscode-kubernetes-tools)
+- [Gitlens - eamodio.gitlens](https://marketplace.visualstudio.com/items?itemName=eamodio.gitlens)
+- [VS Code ES Lint - dbaeumer.vscode-eslint](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint)
+- [Terraform - HashiCorp.terraform](https://marketplace.visualstudio.com/items?itemName=HashiCorp.terraform)
+- [Sourcery - sourcery.sourcery](https://marketplace.visualstudio.com/items?itemName=sourcery.sourcery)
+- [Angular Extension Pack - loiane.angular-extension-pack](https://marketplace.visualstudio.com/items?itemName=loiane.angular-extension-pack)
+
 ** Other Items**
 * Set your global git name and email
 * Create a new ssh key as id_rsa and id_rsa.pub and add it to your keychain. This should be added to your github account manually.
