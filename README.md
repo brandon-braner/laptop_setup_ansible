@@ -3,23 +3,24 @@
 We will be using Ansible to setup a Mac laptop / desktop. This should install everything we need to get a laptop up and running for a new developer.
 
 ** Software that will be installed **
-* iterm2
-* oh-my-zsh
-* docker de 
-* google clou 
-* visual studio code
-* postman
 * dbeaver
-* kubectl
-* tilt
-* terraform
-* node
-* pyenv
-* poetry
+* docker desktop
 * dockutil
-* zsh-syntax-highlighting
+* dockutil
+* google cloud
+* iterm2
+* kubectl
+* node
+* oh-my-zsh
+* poetry
+* postman
+* pyenv
+* terraform
+* tilt
+* visual studio code
 * zsh-autosuggestions
 * zsh-completions
+* zsh-syntax-highlighting
 
 ** Other Items**
 * Set your global git name and email
