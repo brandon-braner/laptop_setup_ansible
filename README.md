@@ -11,6 +11,7 @@ We will be using Ansible to setup a Mac laptop / desktop. This should install ev
 * postman
 * dbeaver
 * kubectl
+* tilt
 * terraform
 * node
 * pyenv
