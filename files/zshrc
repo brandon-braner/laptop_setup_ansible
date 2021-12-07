@@ -76,9 +76,9 @@ plugins=(
     kubectl # https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/kubectl
     macos # https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/macos
     web-search # https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/web-search
-    zsh-syntax-highlighting # https://github.com/zsh-users/zsh-syntax-highlighting
-    zsh-autosuggestions # https://github.com/zsh-users/zsh-autosuggestions
-    zsh-completions # https://github.com/zsh-users/zsh-completions
+    # zsh-syntax-highlighting # https://github.com/zsh-users/zsh-syntax-highlighting
+    # zsh-autosuggestions # https://github.com/zsh-users/zsh-autosuggestions
+    # zsh-completions # https://github.com/zsh-users/zsh-completions
     z
 )
 

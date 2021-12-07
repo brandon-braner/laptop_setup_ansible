@@ -11,17 +11,19 @@ We will be using Ansible to setup a laptop. This should install everything we ne
 * Run `pip install -r requirements.txt` to install all the requirements
 * Install homebrew `/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"` (Figure out how to automate this)[https://github.com/geerlingguy/ansible-role-homebrew]
 ## Update variables
+* run `whoami` in your terminal to get your username
 * Update variables in the vars.yml file
-* Update remote_user in the ansible.cfg file as your local username
+* Update remote_user in the ansible.cfg file as your local username from whoami
 ## Run the playbooks
 
 * Source the Python venv `source venv/bin/activate` this will allow you to run the ansible commands.
 * Run the following commands to run the playbooks
-  * might have to run like `sudo ansible-playbook ./tasks/homebrew.yml -u username` the first time to get past an error then run it again without sudo???
-  * ansible-playbook tasks/homebrew.yml
-  * ansible-playbook tasks/oh-my-zsh.yml
-  * ansible-playbook tasks/ssh_key.yml
-  * ansible-playbook tasks/git-config.yml
-  * ansible-playbook tasks/pyenv.yml
-  * ansible-playbook tasks/setup-vscode.yml
-  * ansible-playbook tasks/cleanup-dock.yml
+* {{username}} below is the result of whoami
+  * might have to run the homebrew playbook like `ansible-playbook ./tasks/homebrew.yml -u {{username}} -kK` the first time to get past an error then run it again without -kK
+  * ansible-playbook tasks/homebrew.yml -u {{username}}
+  * ansible-playbook tasks/oh-my-zsh.yml -u {{username}}
+  * ansible-playbook tasks/ssh_key.yml -u {{username}}
+  * ansible-playbook tasks/git-config.yml -u {{username}}
+  * ansible-playbook tasks/pyenv.yml -u {{username}}
+  * ansible-playbook tasks/setup-vscode.yml -u {{username}}
+  * ansible-playbook tasks/cleanup-dock.yml -u {{username}}

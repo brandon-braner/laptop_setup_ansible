@@ -2,65 +2,60 @@
 - name: Install Homebrew and Homebrew packages
   connection: local
   hosts: localhost
+  vars:
+    homebrew_casks:
+      - iterm2
+      - docker
+      - google-cloud-sdk
+      - visual-studio-code
+      - postman
+      - dbeaver-community
+    homebrew_packages:
+      - kubectl
+      - terraform
+      - node
+      - dockutil
+      - zsh-syntax-highlighting
+      - zsh-autosuggestions
+      - zsh-completions
   vars_files:
     - ../vars.yml
+  pre_tasks:
+    - name: Check if homebrew is installed
+      stat:
+        path: /opt/homebrew/bin/brew
+      register: homebrew_check
+
   tasks:
-    - name: Install Homebrew # Install Homebrew
-      shell: /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+    # - name: ensure pexpect is installed
+    #   pip:
+    #     name: pexpect
+    #     state: present
+    # - name: Install Homebrew # Install Homebrew
+    #   expect:
+    #     command: /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+    #     responses:
+    #       0: "cd007-01"
+    #       1: ""
+    #   when:
+    #     - not homebrew_check.stat.exists
     - name: Add homebrew to Path Step 1
       shell: echo 'eval "$(/opt/homebrew/bin/brew shellenv)"' >> /Users/{{username}}/.zprofile
+      when:
+        - not homebrew_check.stat.exists
     - name: Add homebrew to Path Step 2
       shell: eval "$(/opt/homebrew/bin/brew shellenv)"
-    - name: Install iterm2
+      when:
+        - not homebrew_check.stat.exists
+    - name: Install Homebrew casks
       homebrew_cask:
         state: present
-        name: iterm2
-    - name: Install Docker Desktop
-      homebrew_cask:
-        state: present
-        name: docker
-    - name: Install kubectl
+        name: "{{item}}"
+      loop: "{{homebrew_casks}}"
+    
+    - name: Install Homebrew packages
       homebrew:
         state: present
-        name: kubectl
-    - name: Install gcloud
-      homebrew_cask:
-        state: present
-        name: google-cloud-sdk
-    - name: Install Terraform
-      homebrew:
-        state: present
-        name: terraform
-    - name: Install Visual Studio Code
-      homebrew_cask:
-        state: present
-        name: visual-studio-code
-    - name: Install NodeJS and NPM
-      homebrew:
-        state: present
-        name: node
-    - name: Install Postman
-      homebrew_cask:
-        state: present
-        name: postman
-    - name: Install DBeaver Community Edition
-      homebrew_cask:
-        state: present
-        name: dbeaver-community
-    - name: Install DockUtil
-      homebrew:
-        state: present
-        name: dockutil
-    - name: Install zsh-auto-highlight
-      homebrew:
-        state: present
-        name: zsh-auto-highlighting
-    - name: Install zsh-autosuggestions
-      homebrew:
-        state: present
-        name: zsh-autosuggestions
-    - name: Install zsh-completions
-      homebrew:
-        state: present
-        name: zsh-completions
+        name: "{{item}}"
+      loop: "{{homebrew_packages}}"
     
