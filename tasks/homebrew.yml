@@ -14,6 +14,7 @@
       - kubectl
       - terraform
       - node
+      - pyenv
       - dockutil
       - zsh-syntax-highlighting
       - zsh-autosuggestions

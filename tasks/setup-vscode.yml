@@ -20,9 +20,8 @@
         path: /Users/{{username}}/.zshrc 
         line: export PATH="$PATH:/Applications/Visual Studio Code.app/Contents/Resources/app/bin" 
     - name: Export VS Code directly to PATH # Do this so its available immediately
-      shell: | 
-        export PATH="$PATH:/Applications/Visual Studio Code.app/Contents/Resources/app/bin" 
+      shell: chsh -s /bin/zsh
     - name: Install VS Code extensions
       shell: | 
-        code --install-extension "{{ item }}"
+        /Applications/Visual Studio Code.app/Contents/Resources/app/bin/code --install-extension "{{ item }}"
       loop: "{{extensions}}"

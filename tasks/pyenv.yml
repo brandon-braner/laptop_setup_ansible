@@ -6,9 +6,6 @@
   #     shell: pyenv --version
   #     register: pyenv_check
   tasks:
-    - name: Install pyenv
-      shell: curl https://pyenv.run | bash
-      # when: pyenv_check.stdout is search("command not found")
     - name: Write pyenv to zprofile
       blockinfile:
         dest: ~/.zprofile
