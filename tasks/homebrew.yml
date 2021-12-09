@@ -11,6 +11,7 @@
       - postman
       - dbeaver-community
       - slack
+      - figma
     homebrew_packages:
       - kubectl
       - terraform
