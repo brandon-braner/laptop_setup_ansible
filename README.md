@@ -6,6 +6,7 @@ We will be using Ansible to setup a Mac laptop / desktop. This should install ev
 * dbeaver
 * docker desktop
 * dockutil
+* figma
 * google cloud
 * iterm2
 * kubectl
