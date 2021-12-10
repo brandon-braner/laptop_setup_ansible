@@ -10,6 +10,7 @@ We will be using Ansible to setup a Mac laptop / desktop. This should install ev
 * google cloud
 * iterm2
 * kubectl
+* kubectx
 * node
 * oh-my-zsh
 * poetry
