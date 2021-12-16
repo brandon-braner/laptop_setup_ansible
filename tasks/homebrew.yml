@@ -21,6 +21,7 @@
       - pre-commit
       - pyenv
       - poetry
+      - postgres
       - dockutil
       - zsh-syntax-highlighting
       - zsh-autosuggestions
