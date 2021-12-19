@@ -11,6 +11,7 @@ We will be using Ansible to setup a Mac laptop / desktop. This should install ev
 * iterm2
 * kubectl
 * kubectx
+* kustomize
 * node
 * oh-my-zsh
 * poetry
