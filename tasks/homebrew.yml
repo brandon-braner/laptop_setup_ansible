@@ -13,6 +13,7 @@
       - slack
       - figma
     homebrew_packages:
+      - graphviz
       - kubectl
       - kubectx
       - kustomize
