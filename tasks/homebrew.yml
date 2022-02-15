@@ -25,6 +25,7 @@
       - poetry
       - postgres
       - dockutil
+      - geos
       - zsh-syntax-highlighting
       - zsh-autosuggestions
       - zsh-completions
