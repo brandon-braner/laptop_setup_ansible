@@ -12,6 +12,9 @@
       - HashiCorp.terraform
       - sourcery.sourcery
       - loiane.angular-extension-pack
+      - esbenp.prettier-vscode
+      - nrwl.angular-console
+      - Tchoupinax.tilt
   vars_files:
     - ../vars.yml
   tasks:

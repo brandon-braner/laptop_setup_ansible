@@ -39,6 +39,9 @@ We will be using Ansible to setup a Mac laptop / desktop. This should install ev
 - [Terraform - HashiCorp.terraform](https://marketplace.visualstudio.com/items?itemName=HashiCorp.terraform)
 - [Sourcery - sourcery.sourcery](https://marketplace.visualstudio.com/items?itemName=sourcery.sourcery)
 - [Angular Extension Pack - loiane.angular-extension-pack](https://marketplace.visualstudio.com/items?itemName=loiane.angular-extension-pack)
+- [Prettier](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode)
+- [NX Console](https://marketplace.visualstudio.com/items?itemName=nrwl.angular-console)
+- [Tilt](https://marketplace.visualstudio.com/items?itemName=Tchoupinax.tilt)
 
 ** Other Items**
 * Set your global git name and email
