@@ -12,6 +12,7 @@
       - dbeaver-community
       - slack
       - figma
+      - bartender
     homebrew_packages:
       - jq
       - kubectl

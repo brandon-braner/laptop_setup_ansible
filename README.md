@@ -3,6 +3,7 @@
 We will be using Ansible to setup a Mac laptop / desktop. This should install everything we need to get a laptop up and running for a new developer.
 
 ** Software that will be installed **
+* bartender
 * dbeaver
 * docker desktop
 * dockutil
