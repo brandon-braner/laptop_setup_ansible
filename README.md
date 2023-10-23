@@ -21,8 +21,7 @@ We will be using Ansible to setup a Mac laptop / desktop. This should install ev
 * postgres
 * postman
 * pre-commit
-* pyenv
-* terraform
+* asdf & python, node, terraform
 * tilt
 * slack
 * visual studio code
