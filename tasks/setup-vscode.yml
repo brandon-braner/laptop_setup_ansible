@@ -3,26 +3,50 @@
   hosts: localhost
   vars:
     extensions:
-      - ms-python.python
-      - ms-vscode-remote.remote-containers
-      - ms-azuretools.vscode-docker
-      - ms-kubernetes-tools.vscode-kubernetes-tools
-      - eamodio.gitlens
-      - dbaeumer.vscode-eslint
-      - HashiCorp.terraform
-      - sourcery.sourcery
-      - loiane.angular-extension-pack
-      - esbenp.prettier-vscode
-      - nrwl.angular-console
-      - Tchoupinax.tilt
+      - ms-python.python # Python
+      - ms-vscode-remote.remote-containers # Remote containers
+      - ms-azuretools.vscode-docker # Docker
+      - ms-kubernetes-tools.vscode-kubernetes-tools # Kubernetes
+      - eamodio.gitlens # GitLens
+      - dbaeumer.vscode-eslint # ESLint
+      - HashiCorp.terraform # Terraform
+      - sourcery.sourcery # Sourcery
+      - loiane.angular-extension-pack # Angular extension pack
+      - esbenp.prettier-vscode # Prettier
+      - nrwl.angular-console # Angular Console
+      - Tchoupinax.tilt # Tilt
+      - googlecloudtools.cloudcode # Google Cloud Code
+      - GitHub.copilot # Copilot
+      - GitHub.copilot-chat # Copilot chat
+      - vscodevim.vim # vim
+      - ms-vscode.vscode-typescript-next # typescript nightly
+      - almenon.arepl # Arepl Python
+      - formulahendry.auto-close-tag # auto close tag
+      - formulahendry.auto-rename-tag # auto rename tag
+      - steoates.autoimpo # auto import
+      - mgmcdermott.vscode-language-babel # Babel JavaScript
+      - ms-python.black-formatter # Black Python
+      - formulahendry.code-runner # Code Runner
+      - gnramsay.create-python-module # Create Python Module
+      - jakeboone02.cypher-query-language # Cypher Query Language
+      - ms-vscode-remote.remote-containers # Remote Containers
+      - editorconfig.edi # EditorConfig
+      - grapecity.gc-excelviewer # Excel Viewer
+      - randomfractalsinc.geo-data-viewer # Geo Data Viewer
+      - github.vscode-github-actions # GitHub Actions
+      - github.vscode-pull-request-github # GitHub Pull Requests
+      - github.github-vscode-theme # GitHub Theme
+      - golang.go # Go
+      - python.isort # isort Python
+
   vars_files:
     - ../vars.yml
   tasks:
     - name: Setup code shell command # https://code.visualstudio.com/docs/setup/mac#_launching-from-the-command-line
       lineinfile:
-        path: /Users/{{username}}/.zshrc 
-        line: export PATH="$PATH:/Applications/Visual Studio Code.app/Contents/Resources/app/bin" 
+        path: /Users/{{username}}/.zshrc
+        line: export PATH="$PATH:/Applications/Visual Studio Code.app/Contents/Resources/app/bin"
     - name: Install VS Code extensions
-      shell: | 
+      shell: |
         /Applications/Visual\ Studio\ Code.app/Contents/Resources/app/bin/code --install-extension "{{ item }}"
       loop: "{{extensions}}"

@@ -1,0 +1,22 @@
+---
+- name: Install pyenv
+  hosts: localhost
+  tasks:
+    - name: Clone asdf repo to home dir
+      shell: git clone https://github.com/asdf-vm/asdf.git ~/.asdf
+    - name: Echo asdf to zshrc
+      lineinfile:
+        dest: ~/.zshrc
+        line: . $HOME/.asdf/asdf.sh
+    - name: Install asdf python plugin
+      shell: asdf plugin-add python
+    - name: Install latest python
+      shell: asdf install python latest
+    - name: Install asdf nodejs plugin
+      shell: asdf plugin add nodejs https://github.com/asdf-vm/asdf-nodejs.git
+    - name: Install latest nodejs
+      shell: asdf install nodejs latest
+    - name: Install asdf terraform plugin
+      shell: asdf plugin-add terraform https://github.com/asdf-community/asdf-hashicorp.git
+    - name: Install latest terraform
+      shell: asdf install terraform latest

@@ -4,7 +4,7 @@
   hosts: localhost
   vars:
     homebrew_casks:
-      - iterm2
+      - warp
       - docker
       - google-cloud-sdk
       - visual-studio-code
@@ -13,16 +13,19 @@
       - slack
       - figma
       - bartender
+      - raycast
+      - todoist
+      - ticktick
+      - lens
+      - lm-studio
+      - jetbrains-toolbox
     homebrew_packages:
       - jq
       - kubectl
       - kubectx
       - kustomize
-      - terraform
-      - node
       - tilt
       - pre-commit
-      - pyenv
       - poetry
       - postgres
       - dockutil
@@ -64,10 +67,9 @@
         state: present
         name: "{{item}}"
       loop: "{{homebrew_casks}}"
-    
+
     - name: Install Homebrew packages
       homebrew:
         state: present
         name: "{{item}}"
       loop: "{{homebrew_packages}}"
-    
