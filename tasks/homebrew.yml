@@ -19,6 +19,8 @@
       - lens
       - lm-studio
       - jetbrains-toolbox
+      - ollama
+      - helm
     homebrew_packages:
       - jq
       - kubectl
@@ -33,6 +35,8 @@
       - zsh-syntax-highlighting
       - zsh-autosuggestions
       - zsh-completions
+      - screen-studio
+      - rectangle
   vars_files:
     - ../vars.yml
   pre_tasks:
